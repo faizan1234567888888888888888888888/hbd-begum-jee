@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Begum Jee ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #ff8fab 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 8s ease infinite;
+        font-family: 'Quicksand', 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    /* Floating hearts background */
+    .hearts-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .heart-float {
+        position: absolute;
+        font-size: 24px;
+        opacity: 0.15;
+        animation: floatHeart 6s ease-in-out infinite;
+    }
+    .heart-float:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .heart-float:nth-child(2) { left: 80%; top: 15%; animation-delay: 1s; }
+    .heart-float:nth-child(3) { left: 25%; top: 70%; animation-delay: 2s; }
+    .heart-float:nth-child(4) { left: 70%; top: 65%; animation-delay: 0.5s; }
+    .heart-float:nth-child(5) { left: 50%; top: 40%; animation-delay: 1.5s; }
+    .heart-float:nth-child(6) { left: 15%; top: 50%; animation-delay: 2.5s; }
+    .heart-float:nth-child(7) { left: 85%; top: 35%; animation-delay: 0.8s; }
+    @keyframes floatHeart {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+        50% { transform: translateY(-20px) scale(1.1); opacity: 0.25; }
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        padding: 48px 40px;
+        border-radius: 28px;
+        text-align: center;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.5);
+        position: relative;
+        width: 380px;
+        max-width: 92vw;
+        z-index: 1;
+        animation: cardFloat 4s ease-in-out infinite;
+    }
+    @keyframes cardFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    .card h1 {
+        font-family: 'Playfair Display', serif;
+        color: #c44569;
+        margin: 0 0 8px 0;
+        font-size: 1.85rem;
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(196, 69, 105, 0.2);
+    }
+
+    .romantic-text {
+        font-size: 15px;
+        color: #5a4a52;
+        margin-bottom: 24px;
+        line-height: 1.7;
+        font-weight: 500;
+    }
+
+    .question {
+        font-size: 17px;
+        color: #c44569;
+        font-weight: 600;
+        margin-bottom: 28px;
+    }
+
+    .buttons {
+        position: relative;
+        height: 120px;
+        width: 100%;
+    }
+
+    #loveBtn {
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        background: linear-gradient(135deg, #ff6b9d, #c44569);
+        color: white;
+        box-shadow: 0 8px 25px rgba(196, 69, 105, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+        font-family: 'Quicksand', sans-serif;
+        z-index: 2;
+    }
+    #loveBtn:hover {
+        transform: translateX(-50%) scale(1.05);
+        box-shadow: 0 12px 35px rgba(196, 69, 105, 0.5);
+    }
+    #loveBtn:active {
+        transform: translateX(-50%) scale(0.98);
+    }
+
+    /* Cancel button: runs away, positioned in viewport so it's uncatchable */
+    #cancelBtn {
+        padding: 10px 18px;
+        font-size: 14px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        position: fixed;
+        background: linear-gradient(135deg, #888, #666);
+        color: white;
+        transition: left 0.15s ease-out, top 0.15s ease-out;
+        font-family: 'Quicksand', sans-serif;
+        z-index: 100;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    #cancelBtn:hover {
+        background: linear-gradient(135deg, #777, #555);
+    }
+
+    /* Celebration overlay */
+    .celebration {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 50%, #ffd6e0 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: clamp(1.2rem, 4vw, 1.75rem);
+        color: #c44569;
+        text-align: center;
+        z-index: 50;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+        padding: 20px;
+    }
+    .celebration.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    .celebration .title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        margin-bottom: 16px;
+        animation: popIn 0.6s ease 0.2s both;
+    }
+    .celebration .message {
+        line-height: 1.8;
+        max-width: 400px;
+        animation: popIn 0.6s ease 0.4s both;
+    }
+    @keyframes popIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    /* Confetti / hearts on celebration */
+    .confetti {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 51;
+        overflow: hidden;
+    }
+    .confetti span {
+        position: absolute;
+        font-size: 28px;
+        animation: confettiFall 4s ease-out forwards;
+        opacity: 0;
+    }
+    @keyframes confettiFall {
+        0% {
+            opacity: 1;
+            transform: translateY(-10px) rotate(0deg);
+        }
+        100% {
+            opacity: 0.7;
+            transform: translateY(100vh) rotate(720deg);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="hearts-bg">
+    <span class="heart-float">❤️</span>
+    <span class="heart-float">💕</span>
+    <span class="heart-float">💖</span>
+    <span class="heart-float">❤️</span>
+    <span class="heart-float">💗</span>
+    <span class="heart-float">💕</span>
+    <span class="heart-float">💖</span>
+</div>
+
+<div class="card">
+    <h1>🎉 Happy Birthday Begum Jee 🎉</h1>
+
+    <div class="romantic-text">
+        My beautiful queen ❤️<br><br>
+        On this special day, I pray that your smile never fades,
+        your happiness never ends, and your heart always feels
+        how deeply you are loved.<br><br>
+        You are my peace, my happiness,
+        my favorite notification, and my forever person 💍
+    </div>
+
+    <p class="question">I Love You Forever ❤️</p>
+
+    <div class="buttons">
+        <button id="loveBtn" type="button">I LOVE YOU TOO ❤️</button>
+    </div>
+</div>
+
+<!-- Cancel button: fixed to viewport, runs away so it's effectively uncatchable -->
+<button id="cancelBtn" type="button">Cancel 😜</button>
+
+<div id="celebration" class="celebration">
+    <div class="confetti" id="confetti"></div>
+    <div class="title">🎊 Yaaaaay Begum Jee!!! 🎊</div>
+    <div class="title">💖 I Knew It! 💖</div>
+    <div class="message">
+        You are my today, tomorrow, and always.<br>
+        May this birthday bring you endless love,
+        success, and all the happiness in the world.<br><br>
+        Forever Yours 💍❤️
+    </div>
+</div>
+
+<script>
+(function() {
+    const cancelBtn = document.getElementById("cancelBtn");
+    const loveBtn = document.getElementById("loveBtn");
+    const celebration = document.getElementById("celebration");
+    const confettiEl = document.getElementById("confetti");
+
+    // Move cancel button anywhere in viewport — uncatchable
+    function moveCancelButton(e) {
+        const padding = 80;
+        const btnW = 120;
+        const btnH = 44;
+        const w = window.innerWidth - btnW - padding * 2;
+        const h = window.innerHeight - btnH - padding * 2;
+        // Place far from current pointer if we have event, otherwise random
+        let x = Math.random() * w + padding;
+        let y = Math.random() * h + padding;
+        if (e) {
+            const ex = e.clientX ?? (e.touches && e.touches[0].clientX);
+            const ey = e.clientY ?? (e.touches && e.touches[0].clientY);
+            // Move to opposite side of screen from pointer
+            x = ex < window.innerWidth / 2 ? window.innerWidth - btnW - padding : padding;
+            y = ey < window.innerHeight / 2 ? window.innerHeight - btnH - padding : padding;
+            // Add random offset so it's not always same corner
+            x += (Math.random() - 0.5) * 100;
+            y += (Math.random() - 0.5) * 100;
+            x = Math.max(padding, Math.min(window.innerWidth - btnW - padding, x));
+            y = Math.max(padding, Math.min(window.innerHeight - btnH - padding, y));
+        }
+        cancelBtn.style.left = x + "px";
+        cancelBtn.style.top = y + "px";
+    }
+
+    // Run away on hover, touch, or any attempt to click
+    cancelBtn.addEventListener("mouseenter", moveCancelButton);
+    cancelBtn.addEventListener("mousedown", function(e) { e.preventDefault(); moveCancelButton(e); });
+    cancelBtn.addEventListener("touchstart", function(e) { e.preventDefault(); moveCancelButton(e); }, { passive: false });
+    cancelBtn.addEventListener("click", function(e) { e.preventDefault(); moveCancelButton(e); });
+
+    // Initial position: middle-top so it immediately runs when she tries
+    cancelBtn.style.left = (window.innerWidth / 2 - 60) + "px";
+    cancelBtn.style.top = "20px";
+
+    // Confetti hearts when she says yes
+    const symbols = ["❤️", "💕", "💖", "💗", "💓", "🌸", "✨"];
+    function createConfetti() {
+        confettiEl.innerHTML = "";
+        for (let i = 0; i < 35; i++) {
+            const s = document.createElement("span");
+            s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            s.style.left = Math.random() * 100 + "%";
+            s.style.animationDelay = Math.random() * 0.8 + "s";
+            s.style.animationDuration = (3 + Math.random() * 2) + "s";
+            confettiEl.appendChild(s);
+        }
+    }
+
+    loveBtn.addEventListener("click", function() {
+        celebration.classList.add("show");
+        createConfetti();
+    });
+})();
+</script>
+
+</body>
+</html>
